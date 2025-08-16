@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Simple Calculator</title>
+    <style> 
+*{
+    margin: 0;
+    padding: 0;
+  
+}
+.cal{
+    height:400px;
+    width: 400px;
+    padding: 10px 3px;
+    margin: auto;
+    margin-top: 200px;
+    background: #aed1ff;
+    color: #525151;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+
+}
+.heading{
+    text-align: center;
+    font-size: 27px;
+}
+
+.upper{
+    /* height: 150px; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin: 50px 10px;
+}
+.inputnum{
+     display: flex;
+     flex-direction: row;
+}
+#output{
+ margin-left: 10px; 
+ height: 30px;
+ width: 140px; 
+text-align: center;
+font-size: 20px;
+padding: 2px;
+}
+.lower{
+    display: flex;
+    gap: 10px;
+padding: 0px 40px;
+
+}
+.lower button{
+    font-size: 20px;
+    padding: 7px;
+    box-shadow: 2px 2px rgb(110, 110, 110);
+    background: #356177;
+    color: rgb(253, 253, 232);
+    border-radius: 6px;
+
+}
+.res{
+   padding: 20px;
+   display: flex;
+   flex-direction: row;
+   gap: 30px;
+font-size: 24px;
+
+}
+
+    
+</style>
+</head>
+<body>
+   <div class="cal">
+    <div class="heading"><h1> Simple Calculator </h1></div>
+    <div class="upper">
+           <div class="inputnum">
+                    <h5>Enter first Number :</h5>
+                    <input type="number"  id="firstnum" step="any" >
+            </div>
+             <div class="inputnum">
+                    <h5>Enter Second Number :</h5>
+                    <input type="number" id="second_num" step="any" >
+            </div>
+                
+     </div>
+     <div class="lower">
+        <button onclick="Add()" class="btn">ADD</button>
+        <button onclick="sub()" class="btn">Subtract</button>
+        <button onclick="mul()" class="btn">Multiply </button>
+        <button onclick="div()" class="btn">Divid</button>
+      
+     </div>
+       <div class="res">
+                    <h5><i>Result:</i></h5>
+                    <input type="text" readonly="" id="output" >
+            </div>
+
+   </div>
+</body>
+<script type="text/javascript">
+
+// Adding two numbers 
+
+function Add() {
+      var first_number= document.getElementById('firstnum').value;
+    var second_number= document.getElementById('second_num').value;
+    var res= parseFloat(first_number) + parseFloat(second_number);
+        document.getElementById('output').value=res;
+}
+
+// Subtracting  two numbers 
+
+function sub() {
+      var first_number= document.getElementById('firstnum').value;
+    var second_number= document.getElementById('second_num').value;
+    var res= parseFloat(first_number) - parseFloat(second_number);
+        document.getElementById('output').value=res;
+}
+
+// Multipling  two numbers 
+
+function mul() {
+      var first_number= document.getElementById('firstnum').value;
+    var second_number= document.getElementById('second_num').value;
+    var res= parseFloat(first_number) * parseFloat(second_number);
+        document.getElementById('output').value=res;
+}
+
+// Dividing two numbers 
+
+function div() {
+      var first_number= document.getElementById('firstnum').value;
+    var second_number= document.getElementById('second_num').value;
+    var res= parseFloat(first_number) / parseFloat(second_number);
+        document.getElementById('output').value=res;
+}
+</script>
+</html>
